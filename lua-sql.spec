@@ -16,7 +16,7 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 BuildRequires:  lua >= %{luaver}, lua-devel >= %{luaver}
 BuildRequires:  pkgconfig
-BuildRequires:  sqlite-devel >= 3.0
+BuildRequires:  sqlite3-devel >= 3.0
 BuildRequires:  mysql-devel
 BuildRequires:  postgresql-devel
 
