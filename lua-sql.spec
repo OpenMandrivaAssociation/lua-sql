@@ -29,7 +29,7 @@ statements and it allows for retrieving results in a row-by-row cursor fashion.
 
 %package doc
 Summary:        Documentation for LuaSQL
-Group:          Documentation
+Group:          Development/Other
 Requires:       lua >= %{luaver}
 %description doc
 LuaSQL is a simple interface from Lua to a DBMS. This package contains the
@@ -38,7 +38,7 @@ documentation for LuaSQL.
 
 %package sqlite
 Summary:        SQLite database connectivity for the Lua programming language
-Group:          Development/Libraries
+Group:          Development/Other
 Requires:       lua >= %{luaver}
 %description sqlite
 LuaSQL is a simple interface from Lua to a DBMS. This package provides access
@@ -47,7 +47,7 @@ to SQLite databases.
 
 %package mysql
 Summary:        MySQL database connectivity for the Lua programming language
-Group:          Development/Libraries
+Group:          Development/Other
 Requires:       lua >= %{luaver}
 %description mysql
 LuaSQL is a simple interface from Lua to a DBMS. This package provides access
@@ -56,7 +56,7 @@ to MySQL databases.
 
 %package postgresql
 Summary:        PostgreSQL database connectivity for the Lua programming language
-Group:          Development/Libraries
+Group:          Development/Other
 Requires:       lua >= %{luaver}
 %description postgresql
 LuaSQL is a simple interface from Lua to a DBMS. This package provides access
