@@ -8,11 +8,11 @@ Version:        2.1.1
 Release:        %mkrel 1
 Summary:        Database connectivity for the Lua programming language
 
-Group:          Development/Libraries
+Group:          Development/Other
 License:        MIT
 URL:            http://www.keplerproject.org/luasql/
 Source0:        http://luaforge.net/frs/download.php/2686/%{oname}-%{version}.tar.gz
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 BuildRequires:  lua >= %{luaver}, lua-devel >= %{luaver}
 BuildRequires:  pkgconfig
