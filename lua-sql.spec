@@ -5,7 +5,7 @@
 
 Name:           lua-sql
 Version:        2.1.1
-Release:        %mkrel 2
+Release:        %mkrel 3
 Summary:        Database connectivity for the Lua programming language
 
 Group:          Development/Other
