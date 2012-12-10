@@ -105,3 +105,34 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root,-)
 %dir %{lualibdir}/luasql
 %{lualibdir}/luasql/postgres.so
+
+
+%changelog
+* Thu Mar 17 2011 Oden Eriksson <oeriksson@mandriva.com> 2.1.1-7mdv2011.0
++ Revision: 645827
+- relink against libmysqlclient.so.18
+
+* Sat Jan 01 2011 Oden Eriksson <oeriksson@mandriva.com> 2.1.1-6mdv2011.0
++ Revision: 627256
+- rebuilt against mysql-5.5.8 libs, again
+
+* Thu Dec 30 2010 Oden Eriksson <oeriksson@mandriva.com> 2.1.1-5mdv2011.0
++ Revision: 626538
+- rebuilt against mysql-5.5.8 libs
+
+* Wed Dec 08 2010 Rémy Clouard <shikamaru@mandriva.org> 2.1.1-3mdv2011.0
++ Revision: 616184
+- rebuild for the mass rebuild
+
+* Mon Sep 14 2009 Thierry Vignaud <tv@mandriva.org> 2.1.1-2mdv2010.0
++ Revision: 439656
+- rebuild
+
+* Mon Dec 29 2008 Jérôme Soyer <saispo@mandriva.org> 2.1.1-1mdv2009.1
++ Revision: 320764
+- Fix RPM Group
+- Fix BR
+- SPEC Cleanup
+- import lua-sql
+
+
