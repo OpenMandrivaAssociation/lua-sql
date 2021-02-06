@@ -68,9 +68,9 @@ to PostgreSQL databases.
 
 
 %build
-make DRIVER_INCS="`pkg-config --cflags sqlite3`" DRIVER_LIBS="`pkg-config --libs sqlite3`" T=sqlite3 DEFS="%{optflags} -fPIC"
-make DRIVER_INCS="" DRIVER_LIBS="-lpq" T=postgres DEFS="%{optflags} -fPIC" WARN=
-make DRIVER_INCS="-I%{_prefix}/include/mysql" DRIVER_LIBS="-L%{_libdir}/mysql -lmysqlclient" T=mysql DEFS="%{optflags} -fPIC"
+%make_build DRIVER_INCS="`pkg-config --cflags sqlite3`" DRIVER_LIBS="`pkg-config --libs sqlite3`" DEFS="%{optflags}" sqlite3
+%make_build DRIVER_INCS="" DRIVER_LIBS="-lpq" DEFS="%{optflags}" WARN= postgres
+%make_build DRIVER_INCS="-I%{_prefix}/include/mysql -I%{_prefix}/include/mysql/server" DRIVER_LIBS="-L%{_libdir}/mysql -lmysqlclient" DEFS="%{optflags}" mysql
 
 
 %install
