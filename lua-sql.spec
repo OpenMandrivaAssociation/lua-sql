@@ -75,9 +75,7 @@ make DRIVER_INCS="-I%{_prefix}/include/mysql" DRIVER_LIBS="-L%{_libdir}/mysql -l
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make install PREFIX=$RPM_BUILD_ROOT%{_prefix} LUA_LIBDIR=$RPM_BUILD_ROOT%{lualibdir} LUA_DIR=$RPM_BUILD_ROOT%{luapkgdir} T=sqlite3
-make install PREFIX=$RPM_BUILD_ROOT%{_prefix} LUA_LIBDIR=$RPM_BUILD_ROOT%{lualibdir} LUA_DIR=$RPM_BUILD_ROOT%{luapkgdir} T=postgres
-make install PREFIX=$RPM_BUILD_ROOT%{_prefix} LUA_LIBDIR=$RPM_BUILD_ROOT%{lualibdir} LUA_DIR=$RPM_BUILD_ROOT%{luapkgdir} T=mysql
+%make_install PREFIX=%{buildroot}%{_prefix} LUA_LIBDIR=%{buildroot}%{lualibdir} LUA_DIR=%{buildroot}%{luapkgdir}
 
 
 %clean
