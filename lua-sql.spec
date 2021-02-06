@@ -4,8 +4,8 @@
 %define oname luasql
 
 Name:           lua-sql
-Version:        2.1.1
-Release:        8
+Version:        2.6.0
+Release:        1
 Summary:        Database connectivity for the Lua programming language
 
 Group:          Development/Other
@@ -68,16 +68,14 @@ to PostgreSQL databases.
 
 
 %build
-make DRIVER_INCS="`pkg-config --cflags sqlite3`" DRIVER_LIBS="`pkg-config --libs sqlite3`" T=sqlite3 DEFS="%{optflags} -fPIC"
-make DRIVER_INCS="" DRIVER_LIBS="-lpq" T=postgres DEFS="%{optflags} -fPIC" WARN=
-make DRIVER_INCS="-I%{_prefix}/include/mysql" DRIVER_LIBS="-L%{_libdir}/mysql -lmysqlclient" T=mysql DEFS="%{optflags} -fPIC"
+%make_build DRIVER_INCS="`pkg-config --cflags sqlite3`" DRIVER_LIBS="`pkg-config --libs sqlite3`" DEFS="%{optflags}" sqlite3
+%make_build DRIVER_INCS="" DRIVER_LIBS="-lpq" DEFS="%{optflags}" WARN= postgres
+%make_build DRIVER_INCS="-I%{_prefix}/include/mysql -I%{_prefix}/include/mysql/server" DRIVER_LIBS="-L%{_libdir}/mysql -lmysqlclient" DEFS="%{optflags}" mysql
 
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make install PREFIX=$RPM_BUILD_ROOT%{_prefix} LUA_LIBDIR=$RPM_BUILD_ROOT%{lualibdir} LUA_DIR=$RPM_BUILD_ROOT%{luapkgdir} T=sqlite3
-make install PREFIX=$RPM_BUILD_ROOT%{_prefix} LUA_LIBDIR=$RPM_BUILD_ROOT%{lualibdir} LUA_DIR=$RPM_BUILD_ROOT%{luapkgdir} T=postgres
-make install PREFIX=$RPM_BUILD_ROOT%{_prefix} LUA_LIBDIR=$RPM_BUILD_ROOT%{lualibdir} LUA_DIR=$RPM_BUILD_ROOT%{luapkgdir} T=mysql
+%make_install PREFIX=%{buildroot}%{_prefix} LUA_LIBDIR=%{buildroot}%{lualibdir} LUA_DIR=%{buildroot}%{luapkgdir}
 
 
 %clean
