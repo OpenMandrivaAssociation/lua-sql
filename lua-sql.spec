@@ -4,8 +4,8 @@
 %define oname luasql
 
 Name:           lua-sql
-Version:        2.1.1
-Release:        8
+Version:        2.6.0
+Release:        1
 Summary:        Database connectivity for the Lua programming language
 
 Group:          Development/Other
