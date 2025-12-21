@@ -14,6 +14,7 @@ URL:            https://www.keplerproject.org/luasql/
 Source0:        http://luaforge.net/frs/download.php/2686/%{oname}-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
+BuildRequires:	make
 BuildRequires:  lua >= %{luaver}, lua-devel >= %{luaver}
 BuildRequires:  pkgconfig
 BuildRequires:  sqlite3-devel >= 3.0
